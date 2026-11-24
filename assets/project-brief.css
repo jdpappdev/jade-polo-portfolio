@@ -26,6 +26,8 @@ body.project-brief-open::before { content:"";position:fixed;inset:0;z-index:1000
 .project-brief__loading { padding:42px 10px;text-align:center;color:#d0d0d0 }
 .project-brief__body .detail-hero { padding:0;border:0 }
 .project-brief__body .detail-grid { grid-template-columns:minmax(0,1.1fr) minmax(180px,.8fr);gap:22px;align-items:center }
+.project-brief--developer .project-brief__body .detail-grid { grid-template-columns:minmax(0,1fr) }
+.project-brief--developer .project-brief__body .detail-grid > div { max-width:680px }
 .project-brief__body .detail-grid h1 { margin:0 0 8px;color:#f5f5f5;font-size:clamp(1.8rem,4vw,2.7rem) }
 .project-brief__body .detail-grid p { color:#d0d0d0;font-size:.88rem;line-height:1.65 }
 .project-brief__body .detail-grid .eyebrow { color:#52d6f4;font-size:.68rem }
