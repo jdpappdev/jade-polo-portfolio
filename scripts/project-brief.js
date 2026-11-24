@@ -27,7 +27,7 @@
     lastTrigger?.focus();
   }
 
-  function renderBrief(project) {
+  function renderBrief(project, isDeveloper) {
     const hero = document.createElement('section');
     hero.className = 'detail-hero';
     const image = project.image
@@ -37,7 +37,7 @@
     const secondaryLink = secondaryUrl
       ? `<a class="button secondary" target="_blank" rel="noreferrer" href="${secondaryUrl}">${project.repo ? 'View source code' : project.extraLabel}</a>`
       : '';
-    hero.innerHTML = `<div class="wrap detail-grid"><div><p class="eyebrow">${project.type}</p><h1>${project.title}</h1><p class="lede"><strong>${project.subtitle}</strong></p><p>${project.description}</p><div class="button-row"><a class="button primary" target="_blank" rel="noreferrer" href="${project.link}">${project.label}</a>${secondaryLink}</div></div>${image}</div>`;
+    hero.innerHTML = `<div class="wrap detail-grid"><div><p class="eyebrow">${project.type}</p><h1>${project.title}</h1><p class="lede"><strong>${project.subtitle}</strong></p><p>${project.description}</p><div class="button-row"><a class="button primary" target="_blank" rel="noreferrer" href="${project.link}">${project.label}</a>${secondaryLink}</div></div>${isDeveloper ? '' : image}</div>`;
     body.replaceChildren(hero);
 
     const steps = project.process.map((step) => `<li>${step}</li>`).join('');
@@ -58,7 +58,9 @@
         : window.creativeBriefs?.[trigger.dataset.creativeBrief];
       if (!project) return;
       lastTrigger = trigger;
-      renderBrief(project);
+      const isDeveloper = Boolean(trigger.dataset.projectBrief);
+      dialog.classList.toggle('project-brief--developer', isDeveloper);
+      renderBrief(project, isDeveloper);
       document.body.classList.add('project-brief-open');
       dialog.show();
     });
