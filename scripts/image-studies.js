@@ -69,12 +69,29 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
     }
   };
 
+  const backgroundObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries, observer) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (!isIntersecting) return;
+          const source = target.querySelector('.image-study-source');
+          const result = target.querySelector('.image-study-result');
+          if (source && result) {
+            target.style.setProperty('--source-image', `url("${source.getAttribute('src')}")`);
+            target.style.setProperty('--result-image', `url("${result.getAttribute('src')}")`);
+            target.closest('.image-study-card')?.style.setProperty('--result-image', `url("${result.getAttribute('src')}")`);
+          }
+          observer.unobserve(target);
+        });
+      }, { rootMargin: '300px' })
+    : null;
+
   document.querySelectorAll('.image-study-range').forEach((range) => {
     const viewer = range.closest('.image-study-compare');
     if (!viewer) return;
     const source = viewer.querySelector('.image-study-source');
     const result = viewer.querySelector('.image-study-result');
-    if (source && result) {
+    if (backgroundObserver) backgroundObserver.observe(viewer);
+    else if (source && result) {
       viewer.style.setProperty('--source-image', `url("${source.getAttribute('src')}")`);
       viewer.style.setProperty('--result-image', `url("${result.getAttribute('src')}")`);
       viewer.closest('.image-study-card')?.style.setProperty('--result-image', `url("${result.getAttribute('src')}")`);

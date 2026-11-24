@@ -276,10 +276,10 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
 .bento-path{position:relative;isolation:isolate;overflow:hidden}
 .bento-path::before{content:'';position:absolute;z-index:0;inset:-8px;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:cover;filter:blur(5px);opacity:.7;transform:scaleX(-1) scale(1.025);transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
 .bento-path::after{content:'';position:absolute;z-index:0;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.96) 0%,rgba(8,8,8,.86) 42%,rgba(8,8,8,.58) 100%),linear-gradient(0deg,rgba(8,8,8,.72),transparent 68%)}
-.bento-path.path-coordination::before{background-image:url('/assets/Cyan-lit%20hands%20planning%20a%20project-2.png')}
-.bento-path.path-developer::before{background-image:url('/assets/Cyan-lit%20hands%20coding-1.png')}
-.bento-path.path-creative::before{background-image:url('/assets/Hands%20Creating%20Digital%20Art-4.png')}
-.bento-path.path-research::before{background-image:url('/assets/Cyan-lit%20hands%20writing%20beside%20a%20laptop-3.png')}
+.bento-path.path-coordination::before{background-image:url('/assets/Cyan-lit%20hands%20planning%20a%20project-2.webp')}
+.bento-path.path-developer::before{background-image:url('/assets/Cyan-lit%20hands%20coding-1.webp')}
+.bento-path.path-creative::before{background-image:url('/assets/Hands%20Creating%20Digital%20Art-4.webp')}
+.bento-path.path-research::before{background-image:url('/assets/Cyan-lit%20hands%20writing%20beside%20a%20laptop-3.webp')}
 .bento-path>:not(.path-icon){position:relative;z-index:1}
 .bento-path .path-icon{z-index:2}
 .bento-path:hover::before,.bento-path:focus-visible::before{opacity:.86;transform:scaleX(-1) scale(1.06)}
@@ -1350,10 +1350,10 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
   background: linear-gradient(90deg, rgba(5,8,10,.88), rgba(5,8,10,.30)), var(--hero-photo) center 52% / cover no-repeat;
   filter: blur(3px);
 }
-.hero.page-hero.coordination-title { --hero-photo: url('/assets/Cyan-lit%20hands%20planning%20a%20project-2.png'); }
-.hero.page-hero.developer-title { --hero-photo: url('/assets/Cyan-lit%20hands%20coding-1.png'); }
-.hero.page-hero.creative-title { --hero-photo: url('/assets/Hands%20Creating%20Digital%20Art-4.png'); }
-.hero.page-hero.research-title { --hero-photo: url('/assets/Cyan-lit%20hands%20writing%20beside%20a%20laptop-3.png'); }
+.hero.page-hero.coordination-title { --hero-photo: url('/assets/Cyan-lit%20hands%20planning%20a%20project-2.webp'); }
+.hero.page-hero.developer-title { --hero-photo: url('/assets/Cyan-lit%20hands%20coding-1.webp'); }
+.hero.page-hero.creative-title { --hero-photo: url('/assets/Hands%20Creating%20Digital%20Art-4.webp'); }
+.hero.page-hero.research-title { --hero-photo: url('/assets/Cyan-lit%20hands%20writing%20beside%20a%20laptop-3.webp'); }
 .hero.page-hero.about-title {
   background:
     radial-gradient(ellipse at 78% 38%, rgba(82, 214, 244, .16), transparent 46%),
