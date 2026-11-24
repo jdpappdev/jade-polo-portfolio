@@ -5,6 +5,3 @@ node_modules/
 .vercel/
 .netlify/
 *.log
-# Local browser profiles from image checks
-scripts/.edge-image-profile/
-scripts/edge-profile-test/
