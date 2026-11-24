@@ -33,26 +33,3 @@ Project briefs open on their respective pages. Practice tracker edits are saved 
 ```
 
 Each page has its own `index.html`, giving it a clean URL when served from the site root. Public assets stay in `assets/` so the URLs used by the published site remain stable.
-
-## Run locally
-
-Install [Node.js](https://nodejs.org/) if it is not already available. From the repository root, run:
-
-```powershell
-node preview-server.cjs
-```
-
-Open <http://127.0.0.1:8080/>. Press `Ctrl+C` to stop the server. There are no packages to install and no build step.
-
-## Work on the site
-
-- Edit the relevant page's `index.html` for content and structure.
-- Keep shared and page-specific styles in `assets/`; keep browser behavior and project data in `scripts/`.
-- When adding a page, use a directory with an `index.html` and update the navigation links where needed.
-- Preview the affected page locally, including mobile layout, keyboard navigation, and any interactive elements.
-
-## Deployment
-
-Deploy the repository root as a static site with no build command. Root-relative asset URLs require the site to be served from the domain root. The current public site is hosted on Netlify.
-
-After deployment, check the page routes, project links, contact email flow, mobile navigation, and CV download. The CV and other personal content are specific to this portfolio; review them before adapting this project for another person.
