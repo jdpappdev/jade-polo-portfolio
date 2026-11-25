@@ -58,7 +58,7 @@
 .tracker-delete { margin-right:auto;background:transparent;border:0;color:#e8b78a;text-decoration:underline;cursor:pointer; }
 .tracker-dialog-actions .button { cursor:pointer; }
 @media(max-width:700px) { .tracker-summary { grid-template-columns:repeat(2,minmax(0,1fr)); } .tracker-fields { grid-template-columns:1fr; } .tracker-wide { grid-column:auto; } .tracker-controls label:nth-child(2) { flex:1 1 150px; } .tracker-controls .button { width:100%; } }
-@media(max-width:760px) {
+@media(max-width:900px) {
   .sample-section .table-wrap { border: 0 !important; background: transparent !important; box-shadow: none !important; overflow: visible !important; }
   .tracker-table { min-width: 0; display: block; }
   .tracker-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

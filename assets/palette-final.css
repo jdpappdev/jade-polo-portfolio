@@ -981,7 +981,7 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
 .closing-panel>.eyebrow{margin:0!important}
 .closing-panel .closing-content{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .closing-panel .closing-content h2{flex:1;max-width:none;margin:0!important;text-align:left!important;font-size:clamp(1.8rem,3vw,2.5rem)!important;line-height:1.16!important}
-.closing-panel .contact-jade-button{position:relative;width:200px;min-width:200px;min-height:62.5px!important;height:62.5px;padding:0!important;overflow:visible!important}
+.closing-panel .contact-jade-button{position:relative;width:200px;min-width:200px;min-height:62.5px!important;height:62.5px;padding:0!important;overflow:clip!important}
 .closing-panel .contact-jade-button,.closing-panel .contact-jade-button:hover,.closing-panel .contact-jade-button:focus-visible,.closing-panel .contact-jade-button:active{background:transparent!important;background-image:none!important;border-color:transparent!important;box-shadow:none!important;color:inherit!important}
 .closing-panel .contact-jade-button:hover,.closing-panel .contact-jade-button:focus-visible,.closing-panel .contact-jade-button:active{transform:none!important}
 .closing-panel .contact-jade-animation{position:absolute;left:50%;top:50%;display:block;width:112px;height:72px;overflow:visible;transform:translate(-50%,-50%) scale(5);transform-origin:center}
@@ -1112,7 +1112,7 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
 
 /* Keep the contact prompt and animated link grouped in the center. */
 .closing-panel .closing-content{width:100%;justify-content:center;gap:32px}
-.closing-panel .closing-content h2{flex:0 1 auto;text-align:right!important;white-space:nowrap}
+.closing-panel .closing-content h2{flex:0 1 auto;min-width:0;text-align:right!important;text-wrap:balance}
 .site-footer .footer-bottom{margin-top:24px!important;border-top:0!important;padding-top:0!important}
 .site-footer .closing-panel{background-color:rgba(18,22,24,.72)!important;background-image:radial-gradient(rgba(255,255,255,.045) .55px,transparent .75px),radial-gradient(ellipse at 12% 0%,rgba(255,255,255,.1),transparent 45%),linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.012) 58%,rgba(82,214,244,.045))!important;background-size:5px 5px,auto,auto!important;border-color:rgba(255,255,255,.16)!important;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px rgba(255,255,255,.16),inset 0 0 30px rgba(255,255,255,.018),0 12px 32px rgba(0,0,0,.3),0 0 25px rgba(82,214,244,.07)!important}
 @media(max-width:700px){.closing-panel .closing-content{align-items:center;gap:0}.closing-panel .closing-content h2{text-align:center!important;white-space:normal}}
