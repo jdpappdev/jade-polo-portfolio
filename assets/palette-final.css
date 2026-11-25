@@ -1199,7 +1199,11 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
 .image-study-label { position: absolute; z-index: 3; left: 12px; padding: 5px 8px; color: #f5f5f5; background: #090b0dd9; border: 1px solid #ffffff28; font: 500 .6rem/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; pointer-events: none; }
 .image-study-label--source { top: 12px; }
 .image-study-label--result { bottom: 12px; }
-.image-study-divider { position: absolute; z-index: 4; top: var(--split); left: 0; width: 100%; height: 1px; background: #52d6f4; box-shadow: 0 0 8px #52d6f47a; pointer-events: none; }
+.image-study-divider { position: absolute; z-index: 4; top: var(--split); left: 0; width: 100%; height: 1px; background: #52d6f4; box-shadow: 0 0 8px #52d6f47a; cursor: ns-resize; touch-action: none; user-select: none; }
+.image-study-divider::before { content: ""; position: absolute; inset: -14px 0; }
+@media (any-pointer: coarse) {
+  .image-study-divider::before { inset-block: -22px; }
+}
 .image-study-grip { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 42px; height: 28px; transform: translate(-50%, -50%); color: #071014; background: #52d6f4; border: 2px solid #e9fbff; border-radius: 999px; box-shadow: 0 2px 12px #0008; font-size: 1rem; line-height: 1; }
 .image-study-range {
   position: absolute;
@@ -1211,10 +1215,9 @@ button,[role="button"]{font-weight:700!important;text-align:center!important}
   transform: translateY(-50%);
   margin: 0;
   opacity: 0;
-  cursor: ns-resize;
+  pointer-events: none;
   writing-mode: vertical-rl;
   direction: rtl;
-  touch-action: none;
 }
 .image-study-compare:focus-within .image-study-divider { height: 3px; box-shadow: 0 0 0 3px #52d6f455, 0 0 12px #52d6f4; }
 .image-study-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 18px 18px 20px; }

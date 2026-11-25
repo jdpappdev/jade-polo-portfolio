@@ -87,7 +87,8 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
 
   document.querySelectorAll('.image-study-range').forEach((range) => {
     const viewer = range.closest('.image-study-compare');
-    if (!viewer) return;
+    const divider = viewer?.querySelector('.image-study-divider');
+    if (!divider) return;
     const source = viewer.querySelector('.image-study-source');
     const result = viewer.querySelector('.image-study-result');
     if (backgroundObserver) backgroundObserver.observe(viewer);
@@ -112,26 +113,26 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
       update();
     };
     let activePointer = null;
-    range.addEventListener('pointerdown', (event) => {
-      if (activePointer !== null || event.button !== 0) return;
+    divider.addEventListener('pointerdown', (event) => {
+      if (activePointer !== null || !event.isPrimary || event.button !== 0) return;
       const bounds = viewer.getBoundingClientRect();
       pointerOffset = event.clientY - bounds.top - bounds.height * Number(range.value) / 100;
       activePointer = event.pointerId;
-      range.focus({ preventScroll: true });
-      range.setPointerCapture(event.pointerId);
+      if (event.pointerType === 'mouse') range.focus({ preventScroll: true });
+      divider.setPointerCapture(event.pointerId);
       event.preventDefault();
     });
-    range.addEventListener('pointermove', (event) => {
+    divider.addEventListener('pointermove', (event) => {
       if (activePointer === event.pointerId) moveToPointer(event);
     });
     const stopDragging = (event) => {
       if (activePointer !== event.pointerId) return;
       activePointer = null;
-      if (range.hasPointerCapture(event.pointerId)) range.releasePointerCapture(event.pointerId);
+      if (divider.hasPointerCapture(event.pointerId)) divider.releasePointerCapture(event.pointerId);
     };
-    range.addEventListener('pointerup', stopDragging);
-    range.addEventListener('pointercancel', stopDragging);
-    range.addEventListener('lostpointercapture', stopDragging);
+    divider.addEventListener('pointerup', stopDragging);
+    divider.addEventListener('pointercancel', stopDragging);
+    divider.addEventListener('lostpointercapture', stopDragging);
     range.addEventListener('input', update);
     update();
   });
