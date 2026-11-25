@@ -1,4 +1,4 @@
-/* Coordination experience and virtual assistant support side-by-side card. */
+/* Match the featured practice card on the Research & Content page. */
 .coordination-experience {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
@@ -8,52 +8,56 @@
 .coordination-experience-copy { max-width: none !important; }
 .coordination-support-card {
   min-width: 0;
-  padding: clamp(24px, 3vw, 34px);
-  border: 1px solid #748d92;
-  border-radius: 18px;
-  background: #2e3944;
-  color: #d3d9d4;
-  box-shadow: 0 14px 34px rgba(5, 8, 10, .12);
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto auto auto auto !important;
+  align-content: start;
+  gap: 8px;
+  padding: 28px !important;
 }
-.coordination-support-card .eyebrow {
-  margin-bottom: 12px;
-  color: #52d6f4;
+.coordination-support-card .sample-badge,
+.coordination-support-card h3,
+.coordination-support-card > p {
+  grid-column: 1;
 }
-.coordination-support-card .eyebrow:before { display: none; }
+.coordination-support-card .sample-badge { grid-row: 1; }
 .coordination-support-card h3 {
-  margin: 0 0 12px;
-  color: #f2f5f3;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  line-height: 1.3;
+  grid-row: 2;
+  margin: 2px 0 4px !important;
+  color: #f5f5f5 !important;
+  font-size: 1.45rem !important;
+  line-height: 1.25 !important;
 }
 .coordination-support-intro {
-  margin: 0 0 20px;
-  color: #d3d9d4;
-  font-size: .9rem;
-  line-height: 1.7;
+  grid-row: 3;
+  margin: 0 0 4px !important;
+  color: #b5b5b5 !important;
+  font-size: .88rem !important;
+  line-height: 1.55 !important;
 }
 .coordination-support-list {
-  margin: 0;
+  grid-column: 1;
+  grid-row: 4;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
 }
 .coordination-support-list li {
   display: grid;
   gap: 3px;
-  padding: 13px 0;
-  border-top: 1px solid rgba(116, 141, 146, .5);
+  padding: 12px 0;
+  border-top: 1px solid #292929;
 }
 .coordination-support-list strong {
-  color: #f2f5f3;
+  color: #f5f5f5;
   font-size: .86rem;
   font-weight: 600;
 }
 .coordination-support-list span {
-  color: #d3d9d4;
+  color: #b5b5b5;
   font-size: .8rem;
   line-height: 1.6;
 }
 @media (max-width: 900px) {
   .coordination-experience { grid-template-columns: minmax(0, 1fr); }
-  .coordination-support-card { max-width: none; }
+  .coordination-support-card { max-width: 560px; }
 }
