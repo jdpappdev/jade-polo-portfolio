@@ -101,9 +101,10 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
       viewer.style.setProperty('--split', `${split}%`);
       range.setAttribute('aria-valuetext', `${split}% original photo above; ${100 - split}% prompt result below.`);
     };
+    let pointerOffset = 0;
     const moveToPointer = (event) => {
       const bounds = viewer.getBoundingClientRect();
-      const pointerPercent = ((event.clientY - bounds.top) / bounds.height) * 100;
+      const pointerPercent = ((event.clientY - bounds.top - pointerOffset) / bounds.height) * 100;
       const minimum = Number(range.min || 0);
       const maximum = Number(range.max || 100);
       const split = Math.max(minimum, Math.min(maximum, pointerPercent));
@@ -112,12 +113,13 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
     };
     let activePointer = null;
     range.addEventListener('pointerdown', (event) => {
-      if (event.button !== undefined && event.button !== 0) return;
+      if (activePointer !== null || event.button !== 0) return;
+      const bounds = viewer.getBoundingClientRect();
+      pointerOffset = event.clientY - bounds.top - bounds.height * Number(range.value) / 100;
       activePointer = event.pointerId;
       range.focus({ preventScroll: true });
       range.setPointerCapture(event.pointerId);
       event.preventDefault();
-      moveToPointer(event);
     });
     range.addEventListener('pointermove', (event) => {
       if (activePointer === event.pointerId) moveToPointer(event);
@@ -129,6 +131,7 @@ OUTPUT: One finished image filling the canvas. No original-photo panel, comparis
     };
     range.addEventListener('pointerup', stopDragging);
     range.addEventListener('pointercancel', stopDragging);
+    range.addEventListener('lostpointercapture', stopDragging);
     range.addEventListener('input', update);
     update();
   });
