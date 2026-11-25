@@ -42,7 +42,7 @@
   font-size: .88rem;
 }
 .coordination-support-list li::before {
-  content: "↗";
+  content: "→";
   color: var(--accent);
 }
 @media (max-width: 900px) {
