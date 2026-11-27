@@ -1,6 +1,6 @@
 # Jade Polo Portfolio
 
-A static portfolio presenting Jade Polo's work in project coordination, web development, creative production, and research. It is built with HTML, CSS, and JavaScript and is published at [jade-polo-portfolio.netlify.app](https://jade-polo-portfolio.netlify.app/).
+A static portfolio presenting Jade Polo's work in project coordination, web development, creative production, and research. It is built with HTML, CSS, and JavaScript and is published at [jdpappdev.github.io/](https://jdpappdev.github.io/).
 
 ## What the site includes
 
